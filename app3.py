@@ -5,12 +5,13 @@ import pickle
 import random
 import time
 import folium
+import os
 from streamlit_folium import st_folium
 
 # ------------------ Load Data ------------------
 st.set_page_config(page_title="Travel Optimizer", layout="wide", page_icon="🌍")
 
-DATA_FOLDER = "C:/Users/devya/Desktop/OA Travel Itenarary/DATA SET"
+DATA_FOLDER = os.path.join(os.path.dirname(__file__), "DATA SET")
 
 try:
     distance_matrix = pd.read_csv(f"{DATA_FOLDER}/distance_matrix.csv", index_col=0)
